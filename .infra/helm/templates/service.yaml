@@ -1,0 +1,3 @@
+{{- include "compass-library.service" (list . "{ .Chart.Name }}.service") -}}
+{{- define "{ .Chart.Name }}.service" -}}
+{{- end -}}
