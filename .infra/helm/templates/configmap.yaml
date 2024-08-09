@@ -1,0 +1,3 @@
+{{- include "app-common-library.configmap" (list . "{{ .Chart.Name }}.configmap") -}}
+{{- define "{{ .Chart.Name }}.configmap" -}}
+{{- end -}}

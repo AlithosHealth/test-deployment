@@ -1,0 +1,26 @@
+apps:
+  test-deployment:
+    target: 'staging'
+    image:
+      tag: latest
+    ingress:
+      type: public
+      domain: 'test-deployment.staging.alithos.health'
+    datadog:
+      enableAPM: false
+      enableLibraryInjection: false # Choose to automatically inject DD Trace library into your application pods else install them in your image.
+      tracingLanguage: 'js' # If enableLibraryInjection is true choose a languguage for the dd-trace library. Options are "js" (NodeJS) or "python".
+      tracingLanguageVersion: '3.6.0' # If enableLibraryInjection is true choose a version of the dd-trace library. See https://www.npmjs.com/package/dd-trace or https://pypi.org/project/ddtrace/.
+    probes:
+      path: '/healthz'
+    namespace: {}  # Defaults to app name.
+    secretName: {} # Defaults to app name.
+    ecrRepo: {}    # Defaults to app name.  
+    environmentVariables: {} # Note: Environment variables containing sensitive data should be stored in a secret, not here. 
+    hpa:
+      enabled: false
+    serviceAccount:
+      create: true  
+      irsa:
+        enabled: false
+        role: {}

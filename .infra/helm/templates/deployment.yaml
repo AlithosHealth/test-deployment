@@ -1,0 +1,3 @@
+{{- include "app-common-library.deployment" (list . "{{ .Chart.Name }}.deployment") -}}
+{{- define "{{ .Chart.Name }}.deployment" -}}
+{{- end -}}

@@ -1,0 +1,3 @@
+{{- include "app-common-library.ingress" (list . "{ .Chart.Name }}.ingress") -}}
+{{- define "{ .Chart.Name }}.ingress" -}}
+{{- end -}}

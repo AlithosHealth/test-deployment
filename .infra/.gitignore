@@ -1,0 +1,7 @@
+# Terraform
+.terraform
+.terraform.*
+.envrc
+terraform.*
+*secret*y*
+!scripts/generate_secrets_yaml.sh
